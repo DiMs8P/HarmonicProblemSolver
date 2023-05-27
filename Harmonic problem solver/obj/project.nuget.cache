@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "UfocpUpqxCmfumIIsPPBHMUA33D1PDbCgKwCXTs2wedjUqTN8XZkS4FFNYOrIn25Gt3Zi1LfaxZbvtcl12A2vQ==",
+  "dgSpecHash": "jpCnKZpMQ+duUPDrP91G5tSJUOzsoJPdH7Gjt9xo6/XpHNYqaLUHLms7AiFxNoopv0YLLQiwkc0l01K/uxb58g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\Harmonic problem solver\\Harmonic problem solver.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.2\\microsoft.netcore.app.ref.7.0.2.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.2\\microsoft.windowsdesktop.app.ref.7.0.2.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.2\\microsoft.aspnetcore.app.ref.7.0.2.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.2\\microsoft.netcore.app.host.win-x64.7.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
