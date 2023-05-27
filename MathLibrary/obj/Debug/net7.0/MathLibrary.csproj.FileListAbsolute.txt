@@ -1,0 +1,24 @@
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\bin\Debug\net7.0\MathLibrary.deps.json
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\bin\Debug\net7.0\MathLibrary.dll
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\bin\Debug\net7.0\MathLibrary.pdb
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.AssemblyReference.cache
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfoInputs.cache
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfo.cs
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.dll
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\refint\MathLibrary.dll
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\MathLibrary.pdb
+C:\Users\Dima\RiderProjects\NDimentionalSearch\MathLibrary\obj\Debug\net7.0\ref\MathLibrary.dll
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\bin\Debug\net7.0\MathLibrary.deps.json
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\bin\Debug\net7.0\MathLibrary.dll
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\bin\Debug\net7.0\MathLibrary.pdb
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.AssemblyReference.cache
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfoInputs.cache
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfo.cs
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.dll
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\refint\MathLibrary.dll
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.pdb
+C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\ref\MathLibrary.dll

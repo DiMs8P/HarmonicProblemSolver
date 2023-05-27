@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Harmonic problem solver/1.0.0": {
+        "dependencies": {
+          "MathLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Harmonic problem solver.dll": {}
+        }
+      },
+      "MathLibrary/1.0.0": {
+        "runtime": {
+          "MathLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Harmonic problem solver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MathLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

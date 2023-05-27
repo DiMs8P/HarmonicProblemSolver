@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "LXNe63awKFDnMgs8GAPpJpjZYOCxMcGizCsPPJDEiA+QkfPddFLb1Ct5ygBBUMjalYQ+4bgZrVVJcgkX4CASgA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\MathLibrary\\MathLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.2\\microsoft.netcore.app.ref.7.0.2.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.2\\microsoft.windowsdesktop.app.ref.7.0.2.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.2\\microsoft.aspnetcore.app.ref.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

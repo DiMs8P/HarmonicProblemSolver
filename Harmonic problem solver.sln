@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harmonic problem solver", "Harmonic problem solver\Harmonic problem solver.csproj", "{B127B9F3-0E8F-4010-9587-D94EF32EDAB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLibrary", "MathLibrary\MathLibrary.csproj", "{8D086628-336F-471A-A477-65967BA58C96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B127B9F3-0E8F-4010-9587-D94EF32EDAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B127B9F3-0E8F-4010-9587-D94EF32EDAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B127B9F3-0E8F-4010-9587-D94EF32EDAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B127B9F3-0E8F-4010-9587-D94EF32EDAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D086628-336F-471A-A477-65967BA58C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D086628-336F-471A-A477-65967BA58C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D086628-336F-471A-A477-65967BA58C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D086628-336F-471A-A477-65967BA58C96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
