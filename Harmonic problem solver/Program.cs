@@ -1,5 +1,6 @@
 ﻿using System;
 using Application.Core;
+using Application.Core.Conditions;
 using Application.Core.DataTypes;
 using Application.Core.DataTypes.Matrix;
 using Application.Core.Global;
@@ -50,23 +51,68 @@ namespace Application
             GlobalVectorFiller vectorFiller = new GlobalVectorFiller(methodData);
             Vector vector = new Vector(new Vector(PointContainer.GetInstance().Size * 2));
             vectorFiller.Fill(vector, grid, iterationData);
-
             
-            // Triangle lowerTrianlge = new LowerTriangle(
-            //         new int[]{0,1,3,4,6},
-            //         new int[]{0, 0, 1, 1, 0, 3},
-            //         new double[]{2,5,4,0,3,0}
-            //     );
-            // double[] diag = new double[] { 6, 6, 6, 6, 6 };
-            // Triangle upperTrianlge = new UpperTriangle(
-            //     new int[]{3,5,5,6,6},
-            //     new int[]{1,2,4,2,3,4},
-            //     new double[]{3,3,5,0,5,0}
-            //     );
-            // SparseMatrix matrix = new SparseMatrix(lowerTrianlge, diag, upperTrianlge);
-            //
-            // Vector vector = new Vector(new double[] {5,2,4,1,6});
+            var firstConditionsProvider =
+                new FirstBoundaryConditionProvider
+                (
+                    grid,
+                    p => p[0] + p[1] + p[2],
+                    p => p[0] - p[1] - p[2]
+                );
+            
+            var firstConditions =
+                firstConditionsProvider
+                    .GetConditions
+                    (
+                        9, 9, 9
+                    );
+            
+            var secondConditionsProvider =
+                new SecondBoundaryConditionProvider(grid);
+            
+            var secondConditions =
+                secondConditionsProvider
+                    .CreateConditions
+                    (
+                        new[] { 0 },
+                        new[] { Bound.Back },
+                        p => 1,
+                        p => -1
+                    )
+                    .CreateConditions
+                    (
+                        new[] { 0 },
+                        new[] { Bound.Left },
+                        p => -1,
+                        p => -1
+                    )
+                    .CreateConditions
+                    (
+                        new[] { 0 },
+                        new[] { Bound.Right },
+                        p => 1,
+                        p => 1
+                    )
+                    .CreateConditions
+                    (
+                        new[] { 0 },
+                        new[] { Bound.Upper },
+                        p => 1,
+                        p => -1
+                    )
+                    .CreateConditions
+                    (
+                        new[] { 0 },
+                        new[] { Bound.Lower },
+                        p => -1,
+                        p => 1
+                    )
+                    .GetConditions();
 
+            Appyer applyer = new Appyer();
+            //applyer.ApplySecondConditions(secondConditions, vector);
+            applyer.ApplyFirstConditions(matrix, vector, firstConditions);
+            
             LUPreconditioner preconditioner = new LUPreconditioner();
             SlaeSolver solver = new SlaeSolver(new BSGSTAB(preconditioner, new LUSparse(preconditioner)));
             Vector solution = solver.Solve(matrix, vector);

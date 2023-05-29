@@ -5,6 +5,7 @@ namespace Application.Core.DataTypes;
 public class Grid
 {
     private Element[] _elements;
+    public Element[] Elements => _elements;
     public int Size => _elements.Length;
 
     public Grid(IParser<Element> parser)

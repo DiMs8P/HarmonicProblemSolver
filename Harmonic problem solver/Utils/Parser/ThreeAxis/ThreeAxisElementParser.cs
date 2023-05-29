@@ -35,7 +35,7 @@ public class ThreeAxisElementParser : IParser<Element>
                         extendedIndexes[2*q] = 2 * indexes[q];
                         extendedIndexes[2*q + 1] = 2 * indexes[q] + 1;
                     }
-                    elems[((_data[1].SplitsNum + 1) * (_data[0].SplitsNum + 1)) * i + (_data[0].SplitsNum + 1) * j + k] = new Element(extendedIndexes, baseFunctions);
+                    elems[((_data[1].SplitsNum) * (_data[0].SplitsNum)) * i + (_data[0].SplitsNum) * j + k] = new Element(extendedIndexes, baseFunctions);
                 }
             }
         }

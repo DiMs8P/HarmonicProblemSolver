@@ -37,7 +37,7 @@ public class GlobalMatrixFiller
         }
     }
 
-    private Matrix GetLocalMatrix(Matrix localStiffness, Matrix localMass, IterationData iterationData)
+    private Matrix GetLocalMatrix(Matrix localMass, Matrix localStiffness, IterationData iterationData)
     {
         Matrix firstThirdMass = (_methodData.Omega * _methodData.Omega * _methodData.Eps) * localMass;
         Matrix secondForthMass = (_methodData.Omega * _methodData.Sigma) * localMass;
@@ -48,10 +48,10 @@ public class GlobalMatrixFiller
         {
             for (int j = 0; j < iterationData.Element.NumberOfIndexes / 2; j++)
             {
-                localMatrix[i, j] = localStiffness[i, j] - firstThirdMass[i, j];
-                localMatrix[i, j + 8] = -secondForthMass[i,j];
-                localMatrix[i + 8, j] = secondForthMass[i,j];
-                localMatrix[i + 8, j + 8] = localStiffness[i, j] - firstThirdMass[i, j];
+                localMatrix[i * 2, j * 2] = localStiffness[i, j] - firstThirdMass[i, j];
+                localMatrix[i * 2, j * 2 + 1] = -secondForthMass[i,j];
+                localMatrix[i * 2 + 1, j * 2] = secondForthMass[i,j];
+                localMatrix[i * 2 + 1, j * 2 + 1] = localStiffness[i, j] - firstThirdMass[i, j];
             }
         }
 
