@@ -16,6 +16,11 @@ public class SparseMatrixSymmetrical
         _diag = new double[PointContainer.GetInstance().Size * 2];
     }
 
+    public SparseMatrixSymmetrical(Triangle lowerTriangle, double[] diag)
+    {
+        _loverTriangle = lowerTriangle;
+        _diag = diag;
+    }
     virtual public void Clear()
     {
         for (int i = 0; i < _diag.Length; i++)

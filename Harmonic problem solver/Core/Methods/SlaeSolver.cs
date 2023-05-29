@@ -12,7 +12,7 @@ public class SlaeSolver
         _method = method;
     }
 
-    public Vector Solve(SparseMatrixSymmetrical globalMatrix, Vector globalVector)
+    public Vector Solve(SparseMatrix globalMatrix, Vector globalVector)
     {
         return _method.Solve(globalMatrix, globalVector);
     }

@@ -9,6 +9,14 @@ internal class UpperTriangle : Triangle
     public UpperTriangle(Grid grid) : base(grid)
     {
     }
+    
+    public UpperTriangle(Triangle upperTriangle) : base(upperTriangle)
+    {
+    }
+    
+    public UpperTriangle(int[] rowPtr, int[] columnPtr, double[] values) : base(rowPtr, columnPtr, values)
+    {
+    }
 
     protected override void Initialize(Grid grid)
     {
@@ -44,11 +52,11 @@ internal class UpperTriangle : Triangle
     
     private void SetIg(List<SortedSet<int>> list)
     {
-        _rowPtr = new int[list.Count];
-        _rowPtr[0] = list[0].Count;
-        for (int i = 1; i < list.Count; i++)
+        _rowPtr = new int[list.Count + 1];
+        _rowPtr[1] = list[0].Count;
+        for (int i = 2; i < list.Count + 1; i++)
         {
-            _rowPtr[i] = _rowPtr[i - 1] + list[i].Count;
+            _rowPtr[i] = _rowPtr[i - 1] + list[i - 1].Count;
         }
     }
 }

@@ -5,5 +5,5 @@ namespace Application.Core.Methods;
 
 public abstract class SlaeSolverMethod
 {
-    public abstract Vector Solve(SparseMatrixSymmetrical globalMatrix, Vector globalVector);
+    public abstract Vector Solve(SparseMatrix globalMatrix, Vector globalVector);
 }

@@ -2,15 +2,37 @@
 
 public abstract class Triangle
 {
-    public ReadOnlySpan<double> Values => _values;
-    public ReadOnlySpan<int> RowPtr => _rowPtr;
-    public ReadOnlySpan<int> ColumnPtr => _columnPtr;
+    public double[] Values => _values;
+    public int[] RowPtr => _rowPtr;
+    public int[] ColumnPtr => _columnPtr;
 
     protected int[] _rowPtr = Array.Empty<int>();
     protected int[] _columnPtr = Array.Empty<int>();
     protected double[] _values = Array.Empty<double>();
 
-    protected Triangle(Grid grid) => Initialize(grid);
+    protected Triangle(Grid grid)
+    {
+        Initialize(grid);
+    }
+    
+    protected Triangle(Triangle triangle)
+    {
+        _rowPtr = triangle._rowPtr.ToArray();
+        _columnPtr = triangle._columnPtr.ToArray();
+        _values = triangle._values.ToArray();
+    }
+    
+    protected Triangle(int[] rowPtr, int[] columnPtr, double[] values)
+    {
+        int[] newRowIndexes = new int[rowPtr.Length + 1];
+        for (int i = 0; i < rowPtr.Length; i++)
+        {
+            newRowIndexes[i + 1] = rowPtr[i];
+        }
+        _rowPtr = newRowIndexes;
+        _columnPtr = columnPtr;
+        _values = values;
+    }
 
     public void Clear()
     {
@@ -40,7 +62,7 @@ public abstract class Triangle
 
     protected double GetValue(int rowIndex, int columnIndex)
     {
-        foreach (var columnValue in ColumnValuesByRow(rowIndex))
+        foreach (var columnValue in ColumnValuesByRow(rowIndex + 1))
         {
             if (columnValue.ColumnIndex == columnIndex)
             {
@@ -52,6 +74,7 @@ public abstract class Triangle
 
     protected void SetValue(int rowIndex, int columnIndex, double value)
     {
+        rowIndex += 1;
         var end = _rowPtr[rowIndex];
 
         var begin = rowIndex == 0
@@ -74,5 +97,4 @@ public abstract class Triangle
         get => GetValue(i, j);
         set => SetValue(i, j, value);
     }
-
 }

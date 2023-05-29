@@ -19,11 +19,43 @@ public class SparseMatrix : SparseMatrixSymmetrical
     {
         _upperTriangle = new UpperTriangle(grid);
     }
+    
+    public SparseMatrix(Triangle lowerTriangle, double[] diag, Triangle upperTriangle) : base(lowerTriangle, diag)
+    {
+        _upperTriangle = upperTriangle;
+    }
 
     public override void Clear()
     {
         base.Clear();
         _upperTriangle.Clear();
+    }
+
+    public SparseMatrix Clone()
+    {
+        Triangle lowerTriangle = new LowerTriangle(L);
+        Triangle upperTriangle = new UpperTriangle(U);
+        double[] diag = _diag.ToArray();
+
+        return new SparseMatrix(lowerTriangle, diag, upperTriangle);
+    }
+    
+    public int[] CloneRows()
+    {
+        var rowIndexes = new int[Diag.Length];
+
+        Array.Copy(L.RowPtr, rowIndexes, L.RowPtr.Length);
+
+        return rowIndexes;
+    }
+
+    public double[] CloneDiagonal()
+    {
+        var diagonal = new double[Diag.Length];
+
+        Array.Copy(Diag, diagonal, Diag.Length);
+
+        return diagonal;
     }
 
     public new IEnumerable<ColumnValue> ColumnValuesByRow(int rowIndex)
