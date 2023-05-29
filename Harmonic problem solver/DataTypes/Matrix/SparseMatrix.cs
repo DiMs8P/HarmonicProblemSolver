@@ -96,7 +96,8 @@ public class SparseMatrix : SparseMatrixSymmetrical
 
                 if (i < j)
                 {
-                    return _upperTriangle[i, j];
+                    (i, j) = (j, i);
+                    return _upperTriangle.Values[_loverTriangle.GetValueIndex(i, j)];
                 }
             }
 
@@ -118,7 +119,8 @@ public class SparseMatrix : SparseMatrixSymmetrical
 
                 if (i < j)
                 {
-                    _upperTriangle[i, j] = value;
+                    (i, j) = (j, i);
+                    _upperTriangle.Values[_loverTriangle.GetValueIndex(i, j)] = value;
                 }
 
                 return;
