@@ -19,7 +19,7 @@ public class GlobalMatrixFiller
         _methodData = methodData;
     }
 
-    public void Fill(SparseMatrixSymmetrical outputMatrix, Grid grid, IterationData iterationData)
+    public void Fill(SparseMatrix outputMatrix, Grid grid, IterationData iterationData)
     {
         outputMatrix.Clear();
         PointContainer points = PointContainer.GetInstance();
@@ -58,7 +58,7 @@ public class GlobalMatrixFiller
         return localMatrix;
     }
 
-    private void Insert(SparseMatrixSymmetrical outputMatrix, Matrix localMatrix, IterationData iterationData)
+    private void Insert(SparseMatrix outputMatrix, Matrix localMatrix, IterationData iterationData)
     {
         for (int i = 0; i < iterationData.Element.NumberOfIndexes; i++) 
         {

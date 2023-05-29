@@ -92,6 +92,25 @@ public abstract class Triangle
         throw new ArgumentException("Wrong triangle indexes!");
     }
 
+    public int GetValueIndex(int rowIndex, int columnIndex)
+    {
+        rowIndex += 1;
+        var end = _rowPtr[rowIndex];
+
+        var begin = rowIndex == 0
+            ? 0
+            : _rowPtr[rowIndex - 1];
+
+        for (int i = begin; i < end; i++)
+        {
+            if (_columnPtr[i] == columnIndex)
+            {
+                return i;
+            }
+        }
+        throw new ArgumentException("Wrong triangle indexes!");
+    }
+
     public double this[int i, int j]
     {
         get => GetValue(i, j);

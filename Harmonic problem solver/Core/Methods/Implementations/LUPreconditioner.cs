@@ -20,8 +20,8 @@ public class LUPreconditioner
 
                 for (var k = preconditionMatrix.L.RowPtr[i]; k < j; k++)
                 {
-                    var iPrev = i - preconditionMatrix.L.ColumnPtr[j];
-                    var kPrev = IndexOf(i - iPrev, preconditionMatrix.L.ColumnPtr[k], preconditionMatrix.L.ColumnPtr, preconditionMatrix.L.RowPtr);
+                    var ilPrev = i - preconditionMatrix.L.ColumnPtr[j];
+                    var kPrev = IndexOf(i - ilPrev, preconditionMatrix.L.ColumnPtr[k], preconditionMatrix.L.ColumnPtr, preconditionMatrix.L.RowPtr);
 
                     if (kPrev == -1) continue;
                     

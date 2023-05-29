@@ -55,20 +55,20 @@ namespace Application
             // Triangle lowerTrianlge = new LowerTriangle(
             //         new int[]{0,1,3,4,6},
             //         new int[]{0, 0, 1, 1, 0, 3},
-            //         new double[]{2, 5, 4, 1, 3, 1}
+            //         new double[]{2,5,4,0,3,0}
             //     );
             // double[] diag = new double[] { 6, 6, 6, 6, 6 };
             // Triangle upperTrianlge = new UpperTriangle(
             //     new int[]{3,5,5,6,6},
             //     new int[]{1,2,4,2,3,4},
-            //     new double[]{3,3,5,5,4,5}
+            //     new double[]{3,3,5,0,5,0}
             //     );
             // SparseMatrix matrix = new SparseMatrix(lowerTrianlge, diag, upperTrianlge);
             //
             // Vector vector = new Vector(new double[] {5,2,4,1,6});
 
             LUPreconditioner preconditioner = new LUPreconditioner();
-            SlaeSolver solver = new SlaeSolver(new LOS(preconditioner, new LUSparse(preconditioner)));
+            SlaeSolver solver = new SlaeSolver(new BSGSTAB(preconditioner, new LUSparse(preconditioner)));
             Vector solution = solver.Solve(matrix, vector);
 
             foreach (var item in solution)
