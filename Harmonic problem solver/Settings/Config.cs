@@ -6,27 +6,31 @@ namespace Application;
 
 public static class Config
 {
+    private static int XSplits = 9;
+    private static int YSplits = 9;
+    private static int ZSplits = 9;
+    
     public static AxisInfo XAxisInfo = new AxisInfo()
     {
-        SplitsNum = 9,
+        SplitsNum = XSplits,
         StartPoint = new Point(0.0),
-        InitialStep = ((double)1 / 9),
+        InitialStep = ((double)1 / XSplits),
         StepMultiplier = 1.0
     };
     
     public static AxisInfo YAxisInfo = new AxisInfo()
     {
-        SplitsNum = 9,
+        SplitsNum = YSplits,
         StartPoint = new Point(0.0),
-        InitialStep = ((double)1 / 9),
+        InitialStep = ((double)1 / YSplits),
         StepMultiplier = 1.0
     };
     
     public static AxisInfo ZAxisInfo = new AxisInfo()
     {
-        SplitsNum = 9,
+        SplitsNum = ZSplits,
         StartPoint = new Point(0.0),
-        InitialStep = ((double)1 / 9),
+        InitialStep = ((double)1 / ZSplits),
         StepMultiplier = 1.0
     };
 

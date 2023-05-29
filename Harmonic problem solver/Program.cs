@@ -64,7 +64,7 @@ namespace Application
                 firstConditionsProvider
                     .GetConditions
                     (
-                        9, 9, 9
+                        Config.XAxisInfo.SplitsNum, Config.YAxisInfo.SplitsNum, Config.ZAxisInfo.SplitsNum
                     );
             
             var secondConditionsProvider =
