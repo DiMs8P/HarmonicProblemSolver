@@ -37,6 +37,7 @@ public class BSGSTAB : SlaeSolverMethod
     private Vector IterationProcess(SparseMatrix globalMatrix, Vector globalVector)
     {
         Console.WriteLine("BCGSTAB");
+        var iter = 0;
 
         var residual = _r0.Lenght() / globalVector.Lenght();
 
@@ -70,11 +71,15 @@ public class BSGSTAB : SlaeSolverMethod
             _r = rNext;
 
             residual = _r.Lenght() / globalVector.Lenght();
+            iter = i;
         }
 
         _luSparse.CalcXWithoutMemory(_preconditionMatrix, solution);
 
-        Console.WriteLine();
+
+        Console.WriteLine("кол-во итераций: {0}", iter);
+        Console.WriteLine(iter);
+
 
         return solution;
     }

@@ -22,3 +22,15 @@ C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0
 C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\refint\MathLibrary.dll
 C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\MathLibrary.pdb
 C:\Users\Dima\RiderProjects\Harmonic problem solver\MathLibrary\obj\Debug\net7.0\ref\MathLibrary.dll
+D:\repos\HarmonicProblemSolver\MathLibrary\bin\Debug\net7.0\MathLibrary.deps.json
+D:\repos\HarmonicProblemSolver\MathLibrary\bin\Debug\net7.0\MathLibrary.dll
+D:\repos\HarmonicProblemSolver\MathLibrary\bin\Debug\net7.0\MathLibrary.pdb
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.AssemblyReference.cache
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfoInputs.cache
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.AssemblyInfo.cs
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.csproj.CoreCompileInputs.cache
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.dll
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\refint\MathLibrary.dll
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\MathLibrary.pdb
+D:\repos\HarmonicProblemSolver\MathLibrary\obj\Debug\net7.0\ref\MathLibrary.dll

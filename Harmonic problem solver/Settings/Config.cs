@@ -6,9 +6,9 @@ namespace Application;
 
 public static class Config
 {
-    private static int XSplits = 9;
-    private static int YSplits = 9;
-    private static int ZSplits = 9;
+    private static int XSplits = 4;
+    private static int YSplits = 4;
+    private static int ZSplits = 4;
     
     public static AxisInfo XAxisInfo = new AxisInfo()
     {

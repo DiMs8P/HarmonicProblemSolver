@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dima\\.nuget\\packages\\": {}
+    "C:\\Users\\Пользователь\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\Harmonic problem solver\\Harmonic problem solver.csproj",
+      "projectUniqueName": "D:\\repos\\HarmonicProblemSolver\\Harmonic problem solver\\Harmonic problem solver.csproj",
       "projectName": "Harmonic problem solver",
-      "projectPath": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\Harmonic problem solver\\Harmonic problem solver.csproj",
-      "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\Harmonic problem solver\\obj\\",
+      "projectPath": "D:\\repos\\HarmonicProblemSolver\\Harmonic problem solver\\Harmonic problem solver.csproj",
+      "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\HarmonicProblemSolver\\Harmonic problem solver\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\MathLibrary\\MathLibrary.csproj": {
-              "projectPath": "C:\\Users\\Dima\\RiderProjects\\Harmonic problem solver\\MathLibrary\\MathLibrary.csproj"
+            "D:\\repos\\HarmonicProblemSolver\\MathLibrary\\MathLibrary.csproj": {
+              "projectPath": "D:\\repos\\HarmonicProblemSolver\\MathLibrary\\MathLibrary.csproj"
             }
           }
         }
@@ -79,30 +79,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.2, 7.0.2]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.2, 7.0.2]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.2, 7.0.2]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.2, 7.0.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.3.23178.7\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

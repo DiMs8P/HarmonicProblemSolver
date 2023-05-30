@@ -16,3 +16,21 @@ C:\Users\Dima\RiderProjects\Harmonic problem solver\Harmonic problem solver\obj\
 C:\Users\Dima\RiderProjects\Harmonic problem solver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.pdb
 C:\Users\Dima\RiderProjects\Harmonic problem solver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.genruntimeconfig.cache
 C:\Users\Dima\RiderProjects\Harmonic problem solver\Harmonic problem solver\obj\Debug\net7.0\ref\Harmonic problem solver.dll
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\Harmonic problem solver.exe
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\Harmonic problem solver.deps.json
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\Harmonic problem solver.runtimeconfig.json
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\Harmonic problem solver.dll
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\Harmonic problem solver.pdb
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\MathLibrary.dll
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\bin\Debug\net7.0\MathLibrary.pdb
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.csproj.AssemblyReference.cache
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.AssemblyInfoInputs.cache
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.AssemblyInfo.cs
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.csproj.CoreCompileInputs.cache
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.csproj.CopyComplete
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.dll
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\refint\Harmonic problem solver.dll
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.pdb
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\Harmonic problem solver.genruntimeconfig.cache
+D:\repos\HarmonicProblemSolver\Harmonic problem solver\obj\Debug\net7.0\ref\Harmonic problem solver.dll

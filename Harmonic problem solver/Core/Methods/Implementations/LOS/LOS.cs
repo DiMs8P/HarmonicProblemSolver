@@ -39,7 +39,7 @@ public class LOS : SlaeSolverMethod
     private Vector IterationProcess(SparseMatrix globalMatrix, Vector globalVector)
     {
         Console.WriteLine("LOS");
-
+        var iter = 0;
         var residual = CustomMath.ScalarProduct(_r, _r);
         var residualNext = residual;
 
@@ -66,7 +66,10 @@ public class LOS : SlaeSolverMethod
             _p = pNext;
 
             residualNext = CustomMath.ScalarProduct(_r, _r) / residual;
+            iter = i;
         }
+
+        Console.WriteLine("кол-во итераций: {0}", iter);
 
         return solution;
     }

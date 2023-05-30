@@ -22,6 +22,7 @@ namespace Application
     {
         static void Main(string[] args)
         {
+
             IParser<Point> pointParser = new PointParser(Config.XAxisInfo, Config.YAxisInfo, Config.ZAxisInfo);
             IParser<Element> elementParser = new ThreeAxisElementParser(Config.XAxisInfo, Config.YAxisInfo, Config.ZAxisInfo);
 
@@ -112,15 +113,55 @@ namespace Application
             Appyer applyer = new Appyer();
             //applyer.ApplySecondConditions(secondConditions, vector);
             applyer.ApplyFirstConditions(matrix, vector, firstConditions);
-            
-            LUPreconditioner preconditioner = new LUPreconditioner();
-            SlaeSolver solver = new SlaeSolver(new BSGSTAB(preconditioner, new LUSparse(preconditioner)));
-            Vector solution = solver.Solve(matrix, vector);
 
-            foreach (var item in solution)
+
+
+            DateTime start1 = DateTime.Now;
+
+            LUPreconditioner preconditioner1 = new LUPreconditioner();
+            SlaeSolver solver1 = new SlaeSolver(new BSGSTAB(preconditioner1, new LUSparse(preconditioner1)));
+            Vector solution1 = solver1.Solve(matrix, vector);
+
+            DateTime end1 = DateTime.Now;
+            TimeSpan ts1 = (end1 - start1);
+            Console.WriteLine("1Elapsed Time is {0} ms", ts1.TotalMilliseconds);
+            Console.WriteLine();
+            DateTime start2 = DateTime.Now;
+
+            LUPreconditioner preconditioner2 = new LUPreconditioner();
+            SlaeSolver solver2 = new SlaeSolver(new LOS(preconditioner2, new LUSparse(preconditioner2)));
+            Vector solution2 = solver2.Solve(matrix, vector);
+
+            DateTime end2 = DateTime.Now;
+            TimeSpan ts2 = (end2 - start2);
+            Console.WriteLine("2Elapsed Time is {0} ms", ts2.TotalMilliseconds);
+            Console.WriteLine();
+            DateTime start3 = DateTime.Now;
+
+            LUPreconditioner preconditioner3 = new LUPreconditioner();
+            SlaeSolver solver3 = new SlaeSolver(new LUSparse(preconditioner3));
+            Vector solution3 = solver3.Solve(matrix, vector);
+            Console.WriteLine("LU");
+
+            DateTime end3 = DateTime.Now;
+            TimeSpan ts3 = (end3 - start3);
+            Console.WriteLine("3Elapsed Time is {0} ms", ts3.TotalMilliseconds);
+
+/*            Console.WriteLine("bsgtttttt");
+            foreach (var item in solution1)
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("losxdfsdfsdfsdf");
+            foreach (var item in solution2)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("lufdgdfgdfgdg");
+            foreach (var item in solution3)
+            {
+                Console.WriteLine(item);
+            }*/
         }
     }
 }
