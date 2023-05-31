@@ -10,7 +10,9 @@ public class Vector : IEnumerable<double>
     public Vector(params double[] values) => _values = values;
     
     public Vector(int size) => _values = new double[size];
-    
+
+    public Vector(double value,int size) => _values = new double[size].Select(x=>value).ToArray();
+
     public Vector(Vector copyFromVector) => _values = copyFromVector._values.Select(x => x).ToArray();
     
     public Vector Normalize()

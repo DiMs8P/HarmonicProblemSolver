@@ -14,38 +14,38 @@ public class LUProfile
         return x;
     }
 
-    private Vector CalcY(ProfileMatrix globalMatrix, Vector q, Vector b)
+    private Vector CalcY(ProfileMatrix matrix, Vector q, Vector b)
     {
         var y = q;
 
-        for (var i = 0; i < globalMatrix.CountRows; i++)
+        for (var i = 0; i < matrix.CountRows; i++)
         {
             var sum = 0d;
 
-            var k = i - (globalMatrix.RowsIndexes[i + 1] - globalMatrix.RowsIndexes[i]);
+            var k = i - (matrix.RowsIndexes[i + 1] - matrix.RowsIndexes[i]);
 
-            for (var j = globalMatrix.RowsIndexes[i]; j < globalMatrix.RowsIndexes[i + 1]; j++, k++)
+            for (var j = matrix.RowsIndexes[i]; j < matrix.RowsIndexes[i + 1]; j++, k++)
             {
-                sum += globalMatrix.LowerValues[j] * y[k];
+                sum += matrix.LowerValues[j] * y[k];
             }
 
-            y[i] = (b[i] - sum) / globalMatrix.Diagonal[i];
+            y[i] = (b[i] - sum) / matrix.Diagonal[i];
         }
 
         return y;
     }
 
-    private Vector CalcX(ProfileMatrix sparseMatrix, Vector y)
+    private Vector CalcX(ProfileMatrix matrix, Vector y)
     {
         var x = y;
 
-        for (var i = sparseMatrix.CountRows - 1; i >= 0; i--)
+        for (var i = matrix.CountRows - 1; i >= 0; i--)
         {
             var k = i - 1;
 
-            for (var j = sparseMatrix.RowsIndexes[i + 1] - 1; j >= sparseMatrix.RowsIndexes[i]; j--, k--)
+            for (var j = matrix.RowsIndexes[i + 1] - 1; j >= matrix.RowsIndexes[i]; j--, k--)
             {
-                x[k] -= sparseMatrix.UpperValues[j] * x[i];
+                x[k] -= matrix.UpperValues[j] * x[i];
             }
         }
 

@@ -5,14 +5,14 @@ namespace Iterative_methods.DataTypes.Matrix;
 public class ProfileMatrix
 {
      public double[] Diagonal { get; }
-    public List<double> LowerValues { get; }
-    public List<double> UpperValues { get; }
+    public double[] LowerValues { get; }
+    public double[] UpperValues { get; }
     public int[] RowsIndexes { get; }
 
     public int CountRows => Diagonal.Length;
     public int CountColumns => Diagonal.Length;
 
-    public ProfileMatrix(int[] rowsIndexes, double[] diagonal, List<double> lowerValues, List<double> upperValues)
+    public ProfileMatrix(int[] rowsIndexes, double[] diagonal, double[] lowerValues, double[] upperValues)
     {
         RowsIndexes = rowsIndexes;
         Diagonal = diagonal;

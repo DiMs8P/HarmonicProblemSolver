@@ -29,7 +29,7 @@ public class MatrixConverter
 
             for (var k = rowsIndexes[i - 1]; k < rowsIndexes[i]; k++, rowBegin++)
             {
-                if (sparseMatrix[i - 1, rowBegin] != -1)
+                if (IndexOf(i - 1, rowBegin, sparseMatrix.L.ColumnPtr, sparseMatrix.L.RowPtr) != -1)
                 {
                     lowerValues.Add(sparseMatrix.L.Values[IndexOf(i - 1, rowBegin, sparseMatrix.L.ColumnPtr, sparseMatrix.L.RowPtr)]);
                     upperValues.Add(sparseMatrix.U.Values[IndexOf(i - 1, rowBegin, sparseMatrix.L.ColumnPtr, sparseMatrix.L.RowPtr)]);
@@ -42,7 +42,7 @@ public class MatrixConverter
             }
         }
 
-        return new ProfileMatrix(rowsIndexes, diagonal, lowerValues, upperValues);
+        return new ProfileMatrix(rowsIndexes, diagonal, lowerValues.ToArray(), upperValues.ToArray());
     }
     
     private static int IndexOf(int rowIndex, int columnIndex, int[] ColumnsIndexes, int[] RowsIndexes)

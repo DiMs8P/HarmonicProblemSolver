@@ -8,6 +8,7 @@ using Application.Core.Methods;
 using Application.Core.Methods.Implementations;
 using Application.Core.Methods.Implementations.BSGSTAB;
 using Application.Core.Methods.Implementations.LOS;
+using Application.Core.Methods.Utils;
 using Application.DataTypes;
 using Application.Utils;
 using Application.Utils.Parser;
@@ -57,8 +58,8 @@ namespace Application
                 new FirstBoundaryConditionProvider
                 (
                     grid,
-                    p => p[0] + p[1] + p[2],
-                    p => p[0] - p[1] - p[2]
+                    p => Math.Exp(-p[0] - p[1]),
+                    p => Math.Exp(-p[1] - p[2])
                 );
             
             var firstConditions =
@@ -67,52 +68,29 @@ namespace Application
                     (
                         Config.XAxisInfo.SplitsNum, Config.YAxisInfo.SplitsNum, Config.ZAxisInfo.SplitsNum
                     );
-            
-            var secondConditionsProvider =
-                new SecondBoundaryConditionProvider(grid);
-            
-            var secondConditions =
-                secondConditionsProvider
-                    .CreateConditions
-                    (
-                        new[] { 0 },
-                        new[] { Bound.Back },
-                        p => 1,
-                        p => -1
-                    )
-                    .CreateConditions
-                    (
-                        new[] { 0 },
-                        new[] { Bound.Left },
-                        p => -1,
-                        p => -1
-                    )
-                    .CreateConditions
-                    (
-                        new[] { 0 },
-                        new[] { Bound.Right },
-                        p => 1,
-                        p => 1
-                    )
-                    .CreateConditions
-                    (
-                        new[] { 0 },
-                        new[] { Bound.Upper },
-                        p => 1,
-                        p => -1
-                    )
-                    .CreateConditions
-                    (
-                        new[] { 0 },
-                        new[] { Bound.Lower },
-                        p => -1,
-                        p => 1
-                    )
-                    .GetConditions();
-
+        
             Appyer applyer = new Appyer();
             //applyer.ApplySecondConditions(secondConditions, vector);
             applyer.ApplyFirstConditions(matrix, vector, firstConditions);
+
+
+
+
+
+            Func<Point, double>[] Uuuu = new Func<Point, double>[]
+            {
+                    Config.Us,
+                    Config.Uc
+            };
+
+            PointContainer Points = PointContainer.GetInstance();
+            Vector naturalResult = new Vector(Points.Size*2);
+
+            for (int i = 0; i < Points.Size; i++)
+            {
+                naturalResult[i*2] = Uuuu[0](Points[i]);
+                naturalResult[i*2+1] = Uuuu[1](Points[i]);
+            }
 
 
 
@@ -121,6 +99,15 @@ namespace Application
             LUPreconditioner preconditioner1 = new LUPreconditioner();
             SlaeSolver solver1 = new SlaeSolver(new BSGSTAB(preconditioner1, new LUSparse(preconditioner1)));
             Vector solution1 = solver1.Solve(matrix, vector);
+
+            var norm1 = (solution1 - naturalResult).Lenght() / naturalResult.Lenght();
+            Console.WriteLine("norm: {0}", norm1);
+
+            /*            Console.WriteLine("bsgtttttt");
+                        foreach (var item in solution1)
+                        {
+                            Console.WriteLine(item);
+                        }*/
 
             DateTime end1 = DateTime.Now;
             TimeSpan ts1 = (end1 - start1);
@@ -132,32 +119,49 @@ namespace Application
             SlaeSolver solver2 = new SlaeSolver(new LOS(preconditioner2, new LUSparse(preconditioner2)));
             Vector solution2 = solver2.Solve(matrix, vector);
 
+            var norm2 = (solution2 - naturalResult).Lenght() / naturalResult.Lenght();
+            Console.WriteLine("norm: {0}", norm2);
+
+            /*            Console.WriteLine("losxdfsdfsdfsdf");
+                        foreach (var item in solution2)
+                        {
+                            Console.WriteLine(item);
+                        }*/
+
             DateTime end2 = DateTime.Now;
             TimeSpan ts2 = (end2 - start2);
             Console.WriteLine("2Elapsed Time is {0} ms", ts2.TotalMilliseconds);
             Console.WriteLine();
+
+
+
+
+
+
+
+
             DateTime start3 = DateTime.Now;
 
+            var profileMatrix = MatrixConverter.Convert(matrix);
+
             LUPreconditioner preconditioner3 = new LUPreconditioner();
-            SlaeSolver solver3 = new SlaeSolver(new LUSparse(preconditioner3));
-            Vector solution3 = solver3.Solve(matrix, vector);
+            LUProfile solver3 = new LUProfile();
+
+            Vector solution3 = new Vector(1,solution2.Size);
+            solution3 = solver3.Solve(profileMatrix, solution3, vector);
+
+
             Console.WriteLine("LU");
+
+            var norm3 = (solution3 - naturalResult).Lenght() / naturalResult.Lenght();
+            Console.WriteLine("norm: {0}", norm3);
+
 
             DateTime end3 = DateTime.Now;
             TimeSpan ts3 = (end3 - start3);
             Console.WriteLine("3Elapsed Time is {0} ms", ts3.TotalMilliseconds);
 
-/*            Console.WriteLine("bsgtttttt");
-            foreach (var item in solution1)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("losxdfsdfsdfsdf");
-            foreach (var item in solution2)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("lufdgdfgdfgdg");
+/*            Console.WriteLine("lufdgdfgdfgdg");
             foreach (var item in solution3)
             {
                 Console.WriteLine(item);

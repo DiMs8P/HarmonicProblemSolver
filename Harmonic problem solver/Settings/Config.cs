@@ -35,10 +35,15 @@ public static class Config
     };
 
     public static double Sigma = 1.0;
-    public static double Lambda = 2.0;
-    public static double Omega = 1.0;
+    public static double Lambda = 5.0;
+    public static double Omega = 2.0;
     public static double Eps = 0.01;
 
-    public static Func<Point, double, double> Fs = (x, t) => -1.01 * x[0] + 0.99 * x[1] + 0.99 * x[2];
-    public static Func<Point, double, double> Fc = (x, t) => 0.99 * x[0] + 1.01 * x[1] + 1.01 * x[2];
+    public static Func<Point, double, double> Fs = (x, t) => -14 * Math.Exp(-x[0] - x[1]) - 2 * Math.Exp(-x[1] - x[2]);
+    public static Func<Point, double, double> Fc = (x, t) => -14 * Math.Exp(-x[1] - x[2]) + 2 * Math.Exp(-x[0] - x[1]);
+    /*    public static Func<Point, double, double> Fs = (x, t) => Math.Exp(-x[0] - x[1]);
+        public static Func<Point, double, double> Fc = (x, t) => Math.Exp(-x[0] - x[1]);*/
+
+    public static Func<Point, double> Us = (x) => Math.Exp(-x[0] - x[1]);
+    public static Func<Point, double> Uc = (x) => Math.Exp(-x[1] - x[2]);
 }

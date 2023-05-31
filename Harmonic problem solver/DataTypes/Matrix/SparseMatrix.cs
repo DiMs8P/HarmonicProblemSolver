@@ -42,7 +42,7 @@ public class SparseMatrix : SparseMatrixSymmetrical
     
     public int[] CloneRows()
     {
-        var rowIndexes = new int[Diag.Length];
+        var rowIndexes = new int[L.RowPtr.Length];
 
         Array.Copy(L.RowPtr, rowIndexes, L.RowPtr.Length);
 
